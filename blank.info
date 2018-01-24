@@ -1,10 +1,10 @@
 ; General info
-name = Blank
-description = A blank theme for embedding
+name = Blank_AI
+description = A blank theme for Amnesty International Spain
 
-; Information added by drupal.org packaging script on 2013-09-30
+; Version
 version = "7.x-1.x-dev"
-project = "blank"
+project = "blank_ai"
 datestamp = "1380556194"
 core = 7.x
 engine = phptemplate
