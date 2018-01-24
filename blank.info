@@ -1,0 +1,15 @@
+; General info
+name = Blank
+description = A blank theme for embedding
+
+; Information added by drupal.org packaging script on 2013-09-30
+version = "7.x-1.x-dev"
+project = "blank"
+datestamp = "1380556194"
+core = 7.x
+engine = phptemplate
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+stylesheets[all][] = css/styles.css
