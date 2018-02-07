@@ -50,10 +50,6 @@
 }
 
 .login #logo {
-  height: 50px;
-}
-
-.login #logo {
   height: 70px;
   width: 100%;
   background-image: url("../images/logoai.png");
@@ -135,10 +131,10 @@
     width: 100%;
   }
   .login #logo {
-    height: 40px;
+    height: 50px;
   }
   .login #header {
-      height: 160px;
+      height: 180px;
       background-position-y: -20px;
   }
   .login .form-submit {
