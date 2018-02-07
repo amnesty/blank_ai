@@ -22,9 +22,9 @@
 /* LOGIN PAGE */
 
 .login {
-    width: 70%;
+    width: 750px;
     margin: 0 auto;
-    border: 2px #333 solid;
+    /*border: 2px #333 solid;*/
 }
 
 .login a {
