@@ -1,3 +1,106 @@
+/* Fuentes ----------- */
+
+@font-face {
+ font-family: 'TradeGothic-BoldCondTwenty';
+ src: url('../fonts/TradeGothic-BoldCondTwenty.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/TradeGothic-BoldCondTwenty.woff') format('woff'),
+      url('../fonts/TradeGothic-BoldCondTwenty.ttf') format('truetype'),
+      url('../fonts/TradeGothic-BoldCondTwenty.svg#TradeGothic-BoldCondTwenty') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+ @font-face {
+ font-family: 'TradeGothicLT-BoldCondTwenty';
+ src: url("../fonts/tradegothiclt-boldcondtwenty.eot?#iefix") format("embedded-opentype"),
+      url("../fonts/tradegothiclt-boldcondtwenty.woff") format("woff"),
+      url("../fonts/tradegothiclt-boldcondtwenty.ttf") format("truetype"),
+      url("../fonts/tradegothiclt-boldcondtwenty.svg#TradeGothicLT-BoldCondTwenty") format("svg");
+ font-weight: normal;
+ font-style: normal;
+}
+
+/* LOGIN PAGE */
+
+.login {
+    width: 700px;
+    margin: 0 auto;
+    border: 2px #333 solid;
+    text-align: center;
+}
+
+.login a {
+  color: #666;
+}
+
+.login a:hover {
+  color: #ccc;
+}
+
+.login p {
+  font-family: TradeGothicLT-BoldCondTwenty, HelveticaNeue-CondensedBold, "Franklin Gothic Medium", sans-serif;
+  font-size: 16px;
+}
+
+.login #text-intro {
+  font-size: 18px;
+}
+
+.login label {
+  font-family: TradeGothicLT-BoldCondTwenty, HelveticaNeue-CondensedBold, "Franklin Gothic Medium", sans-serif;
+  font-size: 18px;
+}
+
+.login #logo {
+  width: 100%;
+  height: 200px;
+  background-image: url("../images/logoai.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffff00;
+}
+
+.login #content {
+  margin: 0px 20px;
+}
+
+.page-user .nav,
+.page-user-login .nav,
+.login .description
+{
+  visibility: hidden;
+  height: 0px;
+}
+
+.login .form-submit {
+    font-family: TradeGothicLT-BoldCondTwenty, HelveticaNeue-CondensedBold, "Franklin Gothic Medium", sans-serif;
+    max-width: 80%;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    clear: both;
+    background: #ffff00;
+    border: 0;
+    padding: 10px;
+    color: #000;
+}
+
+.login .form-submit:hover {
+  background: #ffee00;
+}
+
+@media only screen and (max-width: 720px) {
+  .login {
+    width: 100%;
+  }
+  .login input {
+    width: 100%;
+  }
+
+}
+
+/* NAVBARS */
+
 /* line 9, ../../../../var/lib/gems/1.9.1/gems/bootstrap-sass-3.3.5.1/assets/stylesheets/bootstrap/_navs.scss */
 .nav {
   margin-bottom: 0;
