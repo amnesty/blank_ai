@@ -25,7 +25,6 @@
     width: 70%;
     margin: 0 auto;
     border: 2px #333 solid;
-    text-align: center;
 }
 
 .login a {
@@ -51,17 +50,35 @@
 }
 
 .login #logo {
+  height: 50px;
+}
+
+.login #logo {
+  height: 70px;
   width: 100%;
-  height: 200px;
   background-image: url("../images/logoai.png");
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.login #header {
+  width: 100%;
+  height: 400px;
+  background-image: url("../images/header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   background-color: #ffff00;
+  background-position-y: -60px;
 }
 
 .login #content {
   margin: 0px 20px;
+  text-align: center;
+}
+
+.login input {
+  height: 30px;
 }
 
 .page-user .nav,
@@ -81,7 +98,7 @@
     clear: both;
     background: #ffff00;
     border: 0;
-    padding: 10px;
+    padding: 10px 30px;
     color: #000;
 }
 
@@ -89,9 +106,19 @@
   background: #ffee00;
 }
 
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 1002px) {
+  .login #header {
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 788px) {
   .login {
     width: 100%;
+  }
+  .login #header {
+    height: 200px;
+    background-position-y: -45px;
   }
   .login input {
     width: 90%;
@@ -114,8 +141,9 @@
   .login label {
       font-size: 17px;
   }
-  .login #logo {
-      height: 100px;
+  .login #header {
+      height: 150px;
+      background-position-y: -20px;
   }
 }
 

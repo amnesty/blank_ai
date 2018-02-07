@@ -3,7 +3,8 @@
   <div id="page">
     <div class="login">
 
-        <div id="logo"></div>
+      <div id="logo"></div>
+      <div id="header"></div>
 
         <div id="content" class="clearfix">
 

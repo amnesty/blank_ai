@@ -29,7 +29,7 @@ function blank_ai_theme() {
 }
 
 function blank_ai_preprocess_user_login(&$vars) {
-  $vars['intro_text'] = t('Te damos la bienvenida al área privada de socias y socios de Amnistía Internacional');
+  $vars['intro_text'] = t('');
 }
 
 function blank_ai_preprocess_user_pass(&$vars) {
