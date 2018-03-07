@@ -19,6 +19,10 @@
  font-style: normal;
 }
 
+body:not(.toolbar) {
+  padding-top: 0px;
+}
+
 /* LOGIN PAGE */
 
 .login {
