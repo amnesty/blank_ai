@@ -25,7 +25,12 @@ function blank_ai_theme() {
           'blank_ai_preprocess_user_pass'
         ),
       );
-    return $items;
+      $items['user_profile_form'] = array(
+        'render element' => 'form',
+        'path' => drupal_get_path('theme', 'blank_ai') . '/templates',
+        'template' => 'user-profile-edit',
+      );
+      return $items;
 }
 
 function blank_ai_preprocess_user_login(&$vars) {

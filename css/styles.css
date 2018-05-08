@@ -77,6 +77,11 @@ body:not(.toolbar) {
   text-align: center;
 }
 
+.profile_edit #content {
+  margin: 0px 100px;
+  text-align: left;
+}
+
 .login input {
   height: 30px;
 }
