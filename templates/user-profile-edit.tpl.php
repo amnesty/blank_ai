@@ -7,7 +7,7 @@
       <div id="header"></div>
         <div id="content" class="clearfix">
             <!-- user-login-custom-form -->
-            <p id="text-intro">Aquí puedes modificar tu contraseña:</p>
+            <p id="text-intro">Aquí puedes definir tu nueva contraseña:</p>
 
             <div id="user-edit-<?php print $user->uid; ?>" class="user-edit-form">
               <?php
