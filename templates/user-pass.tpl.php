@@ -1,3 +1,13 @@
+<?php
+  // Si acaba de cambiar la contraseña, sin error
+  if( isset($_POST) && isset($_GET['pass-reset-token']) && $_GET['pass-reset-token'] != ''){
+    echo "aquí redirigiremos";
+    exit(1);
+  }
+
+
+ ?>
+
 <div id="page-wrapper">
 
   <div id="page">
