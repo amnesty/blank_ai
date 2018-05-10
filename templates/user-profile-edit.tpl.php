@@ -2,8 +2,11 @@
 
   // Si es "SOCIO/A" y se cambia la contraseña de manera correcta, se redirige al certificado
   var_dump($user->roles);
-  
+
   if( in_array('Socio_a', $user->roles) && isset($_POST['form_token']) && $_POST['form_token'] != ''){
+    var_dump($_POST['pass']);
+    var_dump($_POST['pass']['pass1']);
+    var_dump($_POST['pass']['pass2']);
     if($_POST['pass']['pass1'] == $_POST['pass']['pass2']){
       global $base_url;
       header('Location: ' . $base_url . '/area-privada-certificado');
