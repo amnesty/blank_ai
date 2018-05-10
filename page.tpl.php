@@ -2,7 +2,6 @@
 
 <div id="content-area">
   <!-- Errors -->
-  <?php print $messages; ?> 
   <?php
     //print $messages;
     if( !preg_match('/user\/login/', $_SERVER['REQUEST_URI']) && !preg_match('/user\/password/', $_SERVER['REQUEST_URI']) ){ print $messages; }
