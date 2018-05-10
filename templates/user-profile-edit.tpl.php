@@ -2,7 +2,7 @@
 
   // Si es "SOCIO/A" y se cambia la contraseña de manera correcta, se redirige al certificado
   var_dump($user->roles);
-  exit(1);
+  
   if( in_array('Socio_a', $user->roles) && isset($_POST['form_token']) && $_POST['form_token'] != ''){
     if($_POST['pass']['pass1'] == $_POST['pass']['pass2']){
       global $base_url;
