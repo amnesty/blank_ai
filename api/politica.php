@@ -5,8 +5,8 @@ $theme_path = $base_url . "/sites/all/themes/blank_ai/api/";
 
 ?>
 		<link rel="stylesheet" href="<?php print $theme_path; ?>/js/magnific-popup/dist/magnific-popup.css">
-		<script type="text/javascript" src="<?php print $theme_path; ?>/js/jquery-2.2.0.min.js"></script>
-    <script type="text/javascript" src="<?php print $theme_path; ?>/js/magnific-popup/dist/jquery.magnific-popup.js"></script>
+		<!--<script type="text/javascript" src="<?php print $theme_path; ?>/js/jquery-2.2.0.min.js"></script>-->
+	        <script type="text/javascript" src="<?php print $theme_path; ?>/js/magnific-popup/dist/jquery.magnific-popup.js"></script>
 		<script type="text/javascript" src="<?php print $theme_path; ?>/js/politica.js"></script>
 
 

@@ -1,4 +1,5 @@
-$(document).ready(function() {
+(function ($) {
+   jQuery(document).ready(function () {
 
   $("input[name='op']").prop("type", "button");
 
@@ -10,7 +11,7 @@ $(document).ready(function() {
       "operation" : 'get_member'};
       $.ajax({
         data:  params,
-        url:   '/civicrm/sites/all/themes/blank_ai/api/includes/get_member.php',
+        url:   '/sites/all/themes/blank_ai/api/includes/get_member.php',
         type:  'post',
         dataType: 'json',
         beforeSend: function () {
@@ -116,6 +117,7 @@ $(document).ready(function() {
   }); // on click
 
 });//.document ready
+})(jQuery)
 
 function isEmail(email) {
   var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;

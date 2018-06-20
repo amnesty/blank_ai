@@ -5,8 +5,8 @@
   <?php
     //print $messages;
     //echo 'test';
-    print("<pre>".print_r($node->nid, true)."</pre>");
-    exit;
+    //print("<pre>".print_r($node->nid, true)."</pre>");
+    //exit;
     if ($node->nid == 262)
     //if (isset($page['content'][system_main][nodes][1][webform]['#form'][submitted][acepto_la_politica_de_privacidad]['#title']))
     {
