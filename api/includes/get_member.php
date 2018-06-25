@@ -7,6 +7,8 @@
     case 'get_member':
         $members = get_member_by_email($_POST['email'])[0];
         $return = $members;
+	//var_dump(($_POST);
+	//exit;
         break;
     case 'insert_member':
         $nombre = $_POST['nombre'];

@@ -1,7 +1,7 @@
 (function ($) {
    jQuery(document).ready(function () {
 
-  $("input[name='op']").prop("type", "button");
+  $(".webform-submit").prop("type", "button");
 
   $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-email-email").blur(function(){
 
@@ -32,10 +32,11 @@
     }
   });
 
-  $("input[name='op']").click(function() {
-    //$("#webform-client-form-1").submit();
+  $(".webform-submit").click(function() {
 
-    if (($('.messages').length == 0)) {
+    var node_id = $("input[name='form_id']").val().split('webform_client_form_')[1];
+
+    if (($('.messages').length == 1)) {
 
       var check = $("#edit-submitted-acepto-la-politica-de-privacidad-1");
       var check_reminder_modal = $('#ai-accion-firma__masinfo_reminder');
@@ -69,14 +70,14 @@
                               "operation" : 'insert_member'};
                 $.ajax({
                   data:  params,
-                  url:   '/civicrm/sites/all/themes/blank_ai/api/includes/get_member.php',
+                  url:   '/sites/all/themes/blank_ai/api/includes/get_member.php',
                   type:  'post',
                   dataType: 'json',
                   beforeSend: function () {
                     //$("#resultado").html("Procesando, espere por favor...");
                   },
                   success:  function (response) {
-                    $("#webform-client-form-1").submit();
+                    $("#webform-client-form-"+node_id).submit();
                   }
                 });
               });
@@ -90,14 +91,14 @@
                             "operation" : 'insert_member'};
               $.ajax({
                 data:  params,
-                url:   '/civicrm/sites/all/themes/blank_ai/api/includes/get_member.php',
+                url:   '/sites/all/themes/blank_ai/api/includes/get_member.php',
                 type:  'post',
                 dataType: 'json',
                 beforeSend: function () {
                   //$("#resultado").html("Procesando, espere por favor...");
                 },
                 success:  function (response) {
-                  $("#webform-client-form-1").submit();
+                  $("#webform-client-form-"+node_id).submit();
                 }
               });
             }
@@ -108,10 +109,25 @@
         return false;
       }
 
-      $("#webform-client-form-1").submit();
-      return true;
+      var params = {"nombre" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-last-name").val(),
+                    "apellidos" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-last-name").val(),
+                    "telefono" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-phone-phone").val(),
+                    "email" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-email-email").val(),
+                    "politica" : $('#edit-submitted-acepto-la-politica-de-privacidad-1').val(),
+                    "operation" : 'insert_member'};
+       $.ajax({
+  	 data:  params,
+         url:   '/sites/all/themes/blank_ai/api/includes/get_member.php',
+         type:  'post',
+         dataType: 'json',
+         beforeSend: function () {},
+         success:  function (response) {
+               $("#webform-client-form-"+node_id).submit();
+         }});
+      //$("#webform-client-form-"+node_id).submit();
+      //return true;
     }else {
-        $("#webform-client-form-1").submit();
+        $("#webform-client-form-"+node_id).submit();
         return true;
     }
   }); // on click
