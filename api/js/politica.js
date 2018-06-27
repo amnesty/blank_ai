@@ -20,11 +20,11 @@
         success:  function (response) {
           if ((response.id == null) || (response.no_fundraising == 1))
           {
-            $('#edit-submitted-acepto-la-politica-de-privacidad-1').prop('checked',false);
-            $('#edit-submitted-acepto-la-politica-de-privacidad-1').show();
+            $('.politica_check').prop('checked',false);
+            $('.politica_check').show();
           }else {
-            $("#edit-submitted-acepto-la-politica-de-privacidad-1").prop('checked',true);
-            $('#edit-submitted-acepto-la-politica-de-privacidad-1').hide();
+            $(".politica_check").prop('checked',true);
+            $('.politica_check').hide();
           }
 
         }
@@ -36,9 +36,9 @@
 
     var node_id = $("input[name='form_id']").val().split('webform_client_form_')[1];
 
-    if (($('.messages').length == 1)) {
+    if (($('.messages').length == 0)) {
 
-      var check = $("#edit-submitted-acepto-la-politica-de-privacidad-1");
+      var check = $(".politica_check");
       var check_reminder_modal = $('#ai-accion-firma__masinfo_reminder');
 
       if(!check.prop("checked") && check_reminder_modal.length > 0 && check_reminder_modal.data("shown") != 1) { // in case that exist an reminder_modal div
@@ -61,7 +61,7 @@
               input.change(function(){
                 var check = $("#ai-accion-firma__masinfo");
                 check.prop("checked", true);
-                $("#edit-submitted-acepto-la-politica-de-privacidad-1").prop("checked", true);
+                $(".politica_check").prop("checked", true);
                 var params = {"nombre" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-last-name").val(),
                               "apellidos" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-last-name").val(),
                               "telefono" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-phone-phone").val(),
@@ -113,7 +113,7 @@
                     "apellidos" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-last-name").val(),
                     "telefono" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-phone-phone").val(),
                     "email" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-email-email").val(),
-                    "politica" : $('#edit-submitted-acepto-la-politica-de-privacidad-1').val(),
+                    "politica" : $('.politica_check').val(),
                     "operation" : 'insert_member'};
        $.ajax({
   	 data:  params,
