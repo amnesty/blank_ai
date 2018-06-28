@@ -108,10 +108,10 @@
           event.stopImmediatePropagation();
           return false;
         }else if ($("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-email-email").val() != ''){
-	  var politica = 1;
-	  if ($('.politica_check:checkbox:checked').is(":checked") == true){
-		politica = 0;
-	  }
+          var politica = 1;
+          if ($('.politica_check:checkbox:checked').is(":checked") == true){
+            politica = 0;
+          }
 
 
           var params = {"nombre" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-first-name").val(),
@@ -141,31 +141,31 @@
       }); // on click
 
 
-  function validarForm() {
+      function validarForm() {
 
-    error = 0;
-    if ($("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-first-name").val() == '') {
-      error = 1;
-    }
+        error = 0;
+        if ($("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-first-name").val() == '') {
+          error = 1;
+        }
 
-    if ($("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-last-name").val() == '') {
-      error = 1;
-    }
+        if ($("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-last-name").val() == '') {
+          error = 1;
+        }
 
-    if ($("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-phone-phone").val() == '') {
-      error = 1;
-    }
+        if ($("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-phone-phone").val() == '') {
+          error = 1;
+        }
 
-    if ($("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-email-email").val() == '') {
-      error = 1;
-    }
+        if ($("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-email-email").val() == '') {
+          error = 1;
+        }
 
-    if(error == 1){
-      return false;
-    }else{
-      return true;
-    }
-  }
+        if(error == 1){
+          return false;
+        }else{
+          return true;
+        }
+      }
 
 
 
@@ -177,29 +177,3 @@
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     return regex.test(email);
   }
-
-/*  function validarForm() {
-
-    error = 0;
-    if ($("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-first-name").val() == '') {
-      error = 1;
-    }
-
-    if ($("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-last-name").val() == '') {
-      error = 1;
-    }
-
-    if ($("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-phone-phone").val() == '') {
-      error = 1;
-    }
-
-    if ($("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-email-email").val() == '') {
-      error = 1;
-    }
-
-    if(error == 1){
-      return false;
-    }else{
-      return true;
-    }
-  }*/
