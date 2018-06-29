@@ -32,13 +32,13 @@ if (getComponentPolitica($page['content'][system_main][nodes][$node->nid][webfor
 //Función que busca un componenete del formulario dentro del array que contiente todos los componentes.
 function getComponentPolitica($arrayComponentes, $TipoComponente)
 {
-
 	foreach ($arrayComponentes as $aComponents)
 	{
-		if ($aComponents[form_key][extra][css_classes] == $TipoComponente){
+		if (isset($aComponents[extra][css_classes]) && $aComponents[extra][css_classes] == $TipoComponente){
 			return true;
 		}
 	}
 	return false;
+
 }
 ?>
