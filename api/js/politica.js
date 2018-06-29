@@ -3,11 +3,11 @@
 
     $(".webform-submit").prop("type", "button");
 
-    $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-email-email").blur(function(){
+    $('input[name*="civicrm_1_contact_1_email_email"]').blur(function(){
 
-      if (isEmail($("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-email-email").val()) == true)
+      if (isEmail($('input[name*="civicrm_1_contact_1_email_email"]').val()) == true)
       {
-        var params = {"email" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-email-email").val(),
+        var params = {"email" : $('input[name*="civicrm_1_contact_1_email_email"]').val(),
         "operation" : 'get_member'};
         $.ajax({
           data:  params,
@@ -41,7 +41,7 @@
         var check = $('.politica_check:checkbox:checked');
         var check_reminder_modal = $('#ai-accion-firma__masinfo_reminder');
 
-        if(!check.is(":checked") && check_reminder_modal.length > 0 && check_reminder_modal.data("shown") != 1 && $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-email-email").val() != '') { // in case that exist an reminder_modal div
+        if(!check.is(":checked") && check_reminder_modal.length > 0 && check_reminder_modal.data("shown") != 1 && $('input[name*="civicrm_1_contact_1_email_email"]').val() != '') { // in case that exist an reminder_modal div
           $.magnificPopup.open({
             items: {
               src: '#test-popup'
@@ -62,10 +62,10 @@
                   var check = $("#ai-accion-firma__masinfo");
                   check.prop("checked", true);
                   $(".politica_check").prop("checked", true);
-                  var params = {"nombre" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-first-name").val(),
-                  "apellidos" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-last-name").val(),
-                  "telefono" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-phone-phone").val(),
-                  "email" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-email-email").val(),
+                  var params = {"nombre" : $('input[name*="civicrm-1-contact-1-contact-first-name"]').val(),
+                  "apellidos" : $('input[name*="civicrm-1-contact-1-contact-last-name').val(),
+                  "telefono" : $('input[name*="civicrm-1-contact-1-phone-phone"]').val(),
+                  "email" : $('input[name*="civicrm_1_contact_1_email_email"]').val(),
                   "politica" : '0',
                   "operation" : 'insert_member'};
                   $.ajax({
@@ -83,10 +83,10 @@
                 });
               },
               beforeClose: function(){
-                var params = {"nombre" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-first-name").val(),
-                "apellidos" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-last-name").val(),
-                "telefono" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-phone-phone").val(),
-                "email" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-email-email").val(),
+                var params = {"nombre" : $('input[name*="civicrm-1-contact-1-contact-first-name"]').val(),
+                "apellidos" : $('input[name*="civicrm-1-contact-1-contact-last-name').val(),
+                "telefono" : $('input[name*="civicrm-1-contact-1-phone-phone"]').val(),
+                "email" : $('input[name*="civicrm_1_contact_1_email_email"]').val(),
                 "politica" : '1',
                 "operation" : 'insert_member'};
                 $.ajax({
@@ -107,17 +107,17 @@
           });
           event.stopImmediatePropagation();
           return false;
-        }else if ($("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-email-email").val() != ''){
+        }else if ($('input[name*="civicrm_1_contact_1_email_email"]').val() != ''){
           var politica = 1;
           if ($('.politica_check:checkbox:checked').is(":checked") == true){
             politica = 0;
           }
 
 
-          var params = {"nombre" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-first-name").val(),
-          "apellidos" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-last-name").val(),
-          "telefono" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-phone-phone").val(),
-          "email" : $("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-email-email").val(),
+          var params = {"nombre" : $('input[name*="civicrm-1-contact-1-contact-first-name"]').val(),
+          "apellidos" : $('input[name*="civicrm-1-contact-1-contact-last-name').val(),
+          "telefono" : $('input[name*="civicrm-1-contact-1-phone-phone"]').val(),
+          "email" : $('input[name*="civicrm_1_contact_1_email_email"]').val(),
           "politica" : politica,
           "operation" : 'insert_member'};
 
@@ -144,19 +144,19 @@
       function validarForm() {
 
         error = 0;
-        if ($("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-first-name").val() == '') {
+        if ($('input[name*="civicrm-1-contact-1-contact-first-name"]').val() == '') {
           error = 1;
         }
 
-        if ($("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-contact-last-name").val() == '') {
+        if ($('input[name*="civicrm-1-contact-1-contact-last-name').val() == '') {
           error = 1;
         }
 
-        if ($("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-phone-phone").val() == '') {
+        if ($('input[name*="civicrm-1-contact-1-phone-phone"]').val() == '') {
           error = 1;
         }
 
-        if ($("#edit-submitted-civicrm-1-contact-1-fieldset-fieldset-civicrm-1-contact-1-email-email").val() == '') {
+        if ($('input[name*="civicrm_1_contact_1_email_email"]').val() == '') {
           error = 1;
         }
 
