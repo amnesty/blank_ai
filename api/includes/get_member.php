@@ -3,10 +3,19 @@
 include_once('connect.php');
 include_once('api.php');
 
+//$member_id = get_member_by_email('nano1985@gmaiewql.com');
+//var_dump($member_id);
+//exit;
+
 switch ($_POST['operation']) {
   case 'get_member':
-    $members = get_member_by_email($_POST['email'])[0];
-    $return = $members;
+    $email = $_POST['email'];
+    $members = get_member_by_email($email);
+    if (!empty($members)){
+    	$return = $members[0];
+    }else{
+	$return = $members;	
+    }
   break;
   case 'insert_member':
     $nombre = $_POST['nombre'];

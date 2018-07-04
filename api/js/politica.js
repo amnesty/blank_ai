@@ -17,6 +17,9 @@
           beforeSend: function () {
             //$("#resultado").html("Procesando, espere por favor...");
           },
+	  error: function(err){
+		console.log("AJAX error in request: " + JSON.stringify(err, null, 2));
+	  },
           success:  function (response) {
             if ((response.id == null) || (response.no_fundraising == 1))
             {
@@ -62,9 +65,9 @@
                   var check = $("#ai-accion-firma__masinfo");
                   check.prop("checked", true);
                   $(".politica_check").prop("checked", true);
-                  var params = {"nombre" : $('input[name*="civicrm-1-contact-1-contact-first-name"]').val(),
-                  "apellidos" : $('input[name*="civicrm-1-contact-1-contact-last-name').val(),
-                  "telefono" : $('input[name*="civicrm-1-contact-1-phone-phone"]').val(),
+                  var params = {"nombre" : $('input[name*="civicrm_1_contact_1_contact_first_name"]').val(),
+                  "apellidos" : $('input[name*="civicrm_1_contact_1_contact_last_name').val(),
+                  "telefono" : $('input[name*="civicrm_1_contact_1_phone_phone"]').val(),
                   "email" : $('input[name*="civicrm_1_contact_1_email_email"]').val(),
                   "politica" : '0',
                   "operation" : 'insert_member'};
