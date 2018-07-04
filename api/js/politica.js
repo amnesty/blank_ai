@@ -86,9 +86,9 @@
                 });
               },
               beforeClose: function(){
-                var params = {"nombre" : $('input[name*="civicrm-1-contact-1-contact-first-name"]').val(),
-                "apellidos" : $('input[name*="civicrm-1-contact-1-contact-last-name').val(),
-                "telefono" : $('input[name*="civicrm-1-contact-1-phone-phone"]').val(),
+                var params = {"nombre" : $('input[name*="civicrm_1_contact_1_contact_first_name"]').val(),
+                "apellidos" : $('input[name*="civicrm_1_contact_1_contact_last_name').val(),
+                "telefono" : $('input[name*="civicrm_1_contact_1_phone_phone"]').val(),
                 "email" : $('input[name*="civicrm_1_contact_1_email_email"]').val(),
                 "politica" : '1',
                 "operation" : 'insert_member'};
@@ -117,9 +117,9 @@
           }
 
 
-          var params = {"nombre" : $('input[name*="civicrm-1-contact-1-contact-first-name"]').val(),
-          "apellidos" : $('input[name*="civicrm-1-contact-1-contact-last-name').val(),
-          "telefono" : $('input[name*="civicrm-1-contact-1-phone-phone"]').val(),
+          var params = {"nombre" : $('input[name*="civicrm_1_contact_1_contact_first_name"]').val(),
+          "apellidos" : $('input[name*="civicrm_1_contact_1_contact_last_name').val(),
+          "telefono" : $('input[name*="civicrm_1_contact_1_phone_phone"]').val(),
           "email" : $('input[name*="civicrm_1_contact_1_email_email"]').val(),
           "politica" : politica,
           "operation" : 'insert_member'};
@@ -147,15 +147,15 @@
       function validarForm() {
 
         error = 0;
-        if ($('input[name*="civicrm-1-contact-1-contact-first-name"]').val() == '') {
+        if ($('input[name*="civicrm_1_contact_1_contact_first_name"]').val() == '') {
           error = 1;
         }
 
-        if ($('input[name*="civicrm-1-contact-1-contact-last-name').val() == '') {
+        if ($('input[name*="civicrm_1_contact_1_contact_last_name').val() == '') {
           error = 1;
         }
 
-        if ($('input[name*="civicrm-1-contact-1-phone-phone"]').val() == '') {
+        if ($('input[name*="civicrm_1_contact_1_phone_phone"]').val() == '') {
           error = 1;
         }
 
