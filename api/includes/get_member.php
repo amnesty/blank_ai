@@ -11,10 +11,11 @@ switch ($_POST['operation']) {
   case 'get_member':
     $email = $_POST['email'];
     $members = get_member_by_email($email);
+
     if (!empty($members)){
     	$return = $members[0];
     }else{
-	$return = $members;	
+	     $return = $members;
     }
   break;
   case 'insert_member':
@@ -38,7 +39,7 @@ switch ($_POST['operation']) {
     $member_id = get_member_by_email($email)[0]["id"];
 
     // si no existe el member, lo creamos internamente
-    if(!isset($member_id)) {
+    if(!isset($member_id) && !empty($members)) {
       $member = post_member_ai($email, $nombre, $apellidos, $telefono, $pais_siglas, $pais_nombre, $estado, $no_fundraising);
       $member_id = $member['id'];
       //insertamos el member en la plaforma de envio de correos

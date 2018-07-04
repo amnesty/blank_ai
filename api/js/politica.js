@@ -14,12 +14,10 @@
           url:   '/sites/all/themes/blank_ai/api/includes/get_member.php',
           type:  'post',
           dataType: 'json',
-          beforeSend: function () {
-            //$("#resultado").html("Procesando, espere por favor...");
-          },
-	  error: function(err){
-		console.log("AJAX error in request: " + JSON.stringify(err, null, 2));
-	  },
+          beforeSend: function () {},
+      	  error: function(err){
+      		    console.log("AJAX error in request: " + JSON.stringify(err, null, 2));
+      	  },
           success:  function (response) {
             if ((response.id == null) || (response.no_fundraising == 1))
             {
@@ -48,7 +46,6 @@
           $.magnificPopup.open({
             items: {
               src: '#test-popup'
-
             },
             removalDelay: 50,
             callbacks: {
@@ -59,7 +56,6 @@
                 input.prop("checked", false);
                 check.prop("checked", false);
                 $('#test-popup').data("shown", 1);
-                //_paq.push(["trackEvent", "popup_check", "mostrado"]);
 
                 input.change(function(){
                   var check = $("#ai-accion-firma__masinfo");
@@ -76,9 +72,10 @@
                     url:   '/sites/all/themes/blank_ai/api/includes/get_member.php',
                     type:  'post',
                     dataType: 'json',
-                    beforeSend: function () {
-                      //$("#resultado").html("Procesando, espere por favor...");
-                    },
+                    beforeSend: function () {},
+                    error: function(err){
+                		    console.log("AJAX error in request: " + JSON.stringify(err, null, 2));
+                	  },
                     success:  function (response) {
                       $("#webform-client-form-"+node_id).submit();
                     }
@@ -97,9 +94,10 @@
                   url:   '/sites/all/themes/blank_ai/api/includes/get_member.php',
                   type:  'post',
                   dataType: 'json',
-                  beforeSend: function () {
-                    //$("#resultado").html("Procesando, espere por favor...");
-                  },
+                  beforeSend: function () {},
+                  error: function(err){
+              		    console.log("AJAX error in request: " + JSON.stringify(err, null, 2));
+              	  },
                   success:  function (response) {
                     $("#webform-client-form-"+node_id).submit();
                   }
@@ -130,6 +128,9 @@
             type:  'post',
             dataType: 'json',
             beforeSend: function () {},
+            error: function(err){
+        		    console.log("AJAX error in request: " + JSON.stringify(err, null, 2));
+        	  },
             success:  function (response) {
               $("#webform-client-form-"+node_id).submit();
             }});
