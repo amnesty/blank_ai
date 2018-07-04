@@ -4,6 +4,7 @@ include_once('connect.php');
 include_once('api.php');
 
 //$member_id = get_member_by_email('nano1985@gmaiewql.com');
+//$member_id = post_member_ai('test-politik-4-@civi.es', 'Fernando', 'Rodríguez', '666666666', 'ES', 'España', 'interesado_a', '0');
 //var_dump($member_id);
 //exit;
 
@@ -36,18 +37,18 @@ switch ($_POST['operation']) {
       $estado = 'socio_a';
     }
 
-    $member_id = get_member_by_email($email)[0]["id"];
+    $member_id = get_member_by_email($email);//[0]["id"];
 
     // si no existe el member, lo creamos internamente
-    if(!isset($member_id) && !empty($members)) {
+    if(empty($member_id)) {
       $member = post_member_ai($email, $nombre, $apellidos, $telefono, $pais_siglas, $pais_nombre, $estado, $no_fundraising);
       $member_id = $member['id'];
       //insertamos el member en la plaforma de envio de correos
       post_member_experian($member_id, $nombre, $apellidos, $email, $telefono, $pais_siglas, $pais_nombre, $estado, $no_fundraising);
     }else{
       // Si existe actualizamos el campo no_fundraising siempre y cuando acepte recibir información (no_fundraising = 0)
-      put_member_ai($member_id, $email, $no_fundraising); // API interna
-      put_member_experian($member_id, $email, $no_fundraising); // API Experian
+      put_member_ai($member_id[0]["id"], $email, $no_fundraising); // API interna
+      put_member_experian($member_id[0]["id"], $email, $no_fundraising); // API Experian
     }
     // vemos si existe la purchase internamente
     //$purchase = get_purchase_by_member_product($product_id, $member_id);
@@ -61,7 +62,13 @@ switch ($_POST['operation']) {
   $purchase_id = $purchase["results"][0]["id"];
   }*/
 
-  $return = $member;
+  if (!empty($member)){
+       $return = $member;
+  }else{
+       $return = $member_id;
+  }
+
+  //$return = $member;
   break;
 }
 

@@ -136,12 +136,12 @@ function get_token(){
 /****************** Consultar status segun crm_id en Experian ***********************/
 function es_interesado($email) {
 
-    $member = get_member_by_email($email)[0];
+    $member = get_member_by_email($email);
 
     // 0 = interesado, 1 = socio, 2 = nuevo
     $essocio = 2;
-    if( isset($member["id"]) ){
-      if($member["crm_id"] > 0){
+    if(!empty($member)) {
+      if($member[0]["crm_id"] > 0){
         $essocio = 1;
       } else {
         $essocio = 0;
@@ -377,16 +377,24 @@ function post_member_purchase_experian($purchase_id, $product_id, $member_id, $e
 /************************* PUTs *************************/
 function put_member_ai($member_id, $email, $no_fundraising){
 
-    $data = '{
-        "email": "'.$email.'",
-        "datejoin": "'.get_member_by_email($email)[0]["datejoin"].'",
-        "synchro_update" : "'.get_fecha().'",
-        "no_fundraising": "'.$no_fundraising.'"
-     }';
+    $member = get_member_by_email($email);
 
-    $url = "http://".IP.":".PORT."/api/members/".$member_id."/";
-    $res = ai_curl_put($url, $data);
-    return $res;
+    //if(!empty($member)){
+	$datejoin = $member[0]["datejoin"]; 
+    
+	$data = '{
+	        "email": "'.$email.'",
+        	"datejoin": "'.$datejoin.'",
+	        "synchro_update" : "'.get_fecha().'",
+        	"no_fundraising": "'.$no_fundraising.'"
+     	}';
+
+    	$url = "http://".IP.":".PORT."/api/members/".$member_id."/";
+    	$res = ai_curl_put($url, $data);
+    	return $res;
+    //}else{
+	//return null;
+    //}
 }
 
 function put_member_experian($members_id, $email, $no_fundraising){
@@ -404,9 +412,10 @@ function put_member_experian($members_id, $email, $no_fundraising){
     date_default_timezone_set('Europe/Madrid');
     $now = date("m/d/Y H:i:s");
 
-    $postText = '{
-      "apiPostId": "24",
-      "data": [
+    if(empty($members_id)){
+     $postText = '{
+     	"apiPostId": "24",
+      	"data": [
         {
           "name":"members_id",
           "value":"'.$members_id.'"
@@ -427,6 +436,7 @@ function put_member_experian($members_id, $email, $no_fundraising){
 
       $res = do_curl($url,"POST",$headers,$postText);
       return $res["result"];
+   }
 }
 
 ?>
