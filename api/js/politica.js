@@ -1,7 +1,7 @@
 (function ($) {
   jQuery(document).ready(function () {
 
-    $(".webform-submit").prop("type", "button");
+    //$(".webform-submit").prop("type", "button");
 
     $('input[name*="civicrm_1_contact_1_email_email"]').blur(function(){
 
@@ -21,9 +21,11 @@
           success:  function (response) {
             if ((response.id == null) || (response.no_fundraising == 1))
             {
+	      $(".webform-submit").prop("type", "button");      
               $('.politica_check').prop('checked',false);
               $('.politica_check').show();
             }else {
+	      $(".webform-submit").prop("type", "submit");	
               $(".politica_check").prop('checked',true);
               $('.politica_check').hide();
             }
@@ -34,6 +36,8 @@
     });
 
     $(".webform-submit").click(function() {
+
+      if ($(".webform-submit").prop('type') == 'button'){
 
       var node_id = $("input[name='form_id']").val().split('webform_client_form_')[1];
 
@@ -142,6 +146,7 @@
           $("#webform-client-form-"+node_id).submit();
           return true;
         }
+	}
       }); // on click
 
 

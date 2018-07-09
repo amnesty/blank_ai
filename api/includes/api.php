@@ -248,7 +248,8 @@ function post_member_experian($members_id, $firstname, $lastname, $email, $telef
     $url = "https://api.ccmp.eu/services2/api/Recipients/";
 
     date_default_timezone_set('Europe/Madrid');
-    $now = date("m/d/Y H:i:s");
+    //$now = date("m/d/Y H:i:s");
+    $now = date("d/m/Y H:i:s");
 
     $postText = '{
       "apiPostId": "23",
