@@ -6,6 +6,7 @@ if (getComponentPolitica($page['content'][system_main][nodes][$node->nid][webfor
 
 	?>
 	<link rel="stylesheet" href="<?php print $theme_path; ?>/js/magnific-popup/dist/magnific-popup.css">
+	<link rel="stylesheet" href="<?php print $theme_path; ?>/css/styles.css">
 	<script type="text/javascript" src="<?php print $theme_path; ?>/js/magnific-popup/dist/jquery.magnific-popup.js"></script>
 	<script type="text/javascript" src="<?php print $theme_path; ?>/js/politica.js"></script>
 
