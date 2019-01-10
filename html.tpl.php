@@ -19,6 +19,8 @@
     <?php print $page_top; ?>
     <?php print $page; ?>
     <?php print $page_bottom; ?>
+    <!-- Estadísticas en Piwik (si aplica, sino debe estar vacío) -->
+    <?php include_once('piwik.php'); ?>
   </body>
 
 </html>
