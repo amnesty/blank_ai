@@ -20,9 +20,6 @@
                 $form['name']['#title'] = 'Usuario (NIF/NIE)';
                 $form['name']['#attributes']['placeholder'] = '111111111X';
                 print drupal_render($form['name']);
-              ?>
-                <p style="font-size: 14px; margin-top: -15px; color: #333;"><i>Para el personal, el usuario debe ser el correo electrónico.</i></p>
-              <?php
                 print drupal_render($form['pass']);
               ?>
 
