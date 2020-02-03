@@ -21,8 +21,7 @@
               print drupal_render($form['form_id']);
               print drupal_render($form['form_token']);
               print drupal_render($form['actions']);
-              print drupal_render($form['#validate']);
-
+              //print drupal_render($form['#validate']);
             ?>
           </div>
 

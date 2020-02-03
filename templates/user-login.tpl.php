@@ -27,7 +27,7 @@
 
             <div class="user-login-links">
                 <p><span class="password-link"><a href="/user/password">¿Has olvidado tu contraseña?</a></span></p>
-                <p>Si no estás registrado o tienes cualquier problema, <a href="mailto:socios@es.amnesty.org">escríbenos</a>.</p>
+                <p>Si no estás registrado o tienes cualquier problema, <a href="mailto:sociosysocias@es.amnesty.org">escríbenos</a>.</p>
             </div>
 
             <?php
