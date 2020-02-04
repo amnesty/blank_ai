@@ -27,7 +27,7 @@
 
             <div class="user-login-links">
                 <p>Si es la primera vez que accedes al área privada, <a href="<?php print base_path();?>area-privada/registro" target="popup"
-                  onclick="window.open('<?php print base_path();?>area-privada/registro','popup','width=600,height=600');return false;">pulsa aquí</a> .</p>
+                  onclick="window.open('<?php print base_path();?>area-privada/registro','popup','width=600,height=400');return false;">pulsa aquí</a> .</p>
                 <p><span class="password-link"><a href="<?php print base_path();?>user/password">¿Has olvidado tu contraseña?</a></span></p>
             </div>
 
