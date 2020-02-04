@@ -33,6 +33,52 @@ function blank_ai_theme() {
       return $items;
 }
 
+/*function blank_ai_form_webform_client_form_alter(&$form, &$form_state, $form_id) {
+  $form = array();
+
+  $form['cities'] = array(
+    '#title' => t('City'),
+    '#type' => 'textfield',
+    '#maxlength' => 60,
+    '#autocomplete_path' => 'city/autocomplete',
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Submit',
+  );
+var_dump($form);
+  return $form;
+}*/
+
+/*function blank_ai_menu_alter() {
+
+  $items['city/autocomplete'] = array(
+    'page callback' => '_blank_ai_autocomplete',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  var_dump($items);
+  return $items;
+}*/
+
+/*function _blank_ai_autocomplete($string){
+    $matches = array();
+    $result = db_select('node', 'n')
+      ->fields('n', array('nid'))
+      ->condition('nid', '%' . db_like($string) . '%', 'LIKE')
+      ->execute();
+
+    // save the query to matches
+    foreach ($result as $row) {
+      $matches[$row->nid] = check_plain($row->nid);
+    }
+
+    // Return the result to the form in json
+    drupal_json_output($matches);
+}*/
+
+
 function blank_ai_preprocess_user_login(&$vars) {
   $vars['intro_text'] = t('');
 }
