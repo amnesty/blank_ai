@@ -34,10 +34,10 @@
 
             <div class="user-login-links">
               <p><span class="password-link"><a href="<?php print base_path();?>user/password">¿Has olvidado tu contraseña?</a></span></p>
-              <p>Si todavía no tienes acceso al área privada de socias y socios, <a href="<?php print base_path();?>area-privada/registro" target="popup"
-                  onclick="window.open('<?php print base_path();?>area-privada/registro','popup','width=600,height=400');return false;">pulsa aquí</a>.</p>
+              <p>¿Aún no tienes usuario del área privada de socias y socios? <a href="<?php print base_path();?>area-privada/registro" target="popup"
+                  onclick="window.open('<?php print base_path();?>area-privada/registro','popup','width=600,height=400');return false;">Regístrate aquí</a></p>
             </div>
-            
+
             <!-- /user-login-custom-form -->
         </div>
 
