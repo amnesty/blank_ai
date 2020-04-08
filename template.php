@@ -84,5 +84,5 @@ function blank_ai_preprocess_user_login(&$vars) {
 }
 
 function blank_ai_preprocess_user_pass(&$vars) {
-  $vars['intro_text'] = t('Introduce tu correo electrónico para que podamos mandarte un correo de restablecimiento de la contraseña. ¡Gracias!');
+  $vars['intro_text'] = t('Introduce tu NIF/NIE o correo electrónico para que podamos mandarte un correo de restablecimiento de la contraseña. ¡Gracias!');
 }
