@@ -29,10 +29,10 @@ jQuery(function($) {
   var get_utm_content = urlVars["utm_content"];
 
   // Campos para almacenar
-  var medium_input = $("[name='submitted[civicrm_1_activity_1_cg7_fieldset][civicrm_1_activity_1_cg7_custom_15]']"); /* medium */
-  var source_input = $("[name='submitted[civicrm_1_activity_1_cg7_fieldset][civicrm_1_activity_1_cg7_custom_153]']"); /* source */
-  var campaign_input = $("[name='submitted[civicrm_1_activity_1_cg7_fieldset][civicrm_1_activity_1_cg7_custom_154]']"); /* campaign */
-  var content_input = $("[name='submitted[civicrm_1_activity_1_cg7_fieldset][civicrm_1_activity_1_cg7_custom_156]']"); /* content */
+  var medium_input = $("[name='submitted[civicrm_1_activity_1_cg7_custom_15]']"); /* medium */
+  var source_input = $("[name='submitted[civicrm_1_activity_1_cg7_custom_153]']"); /* source */
+  var campaign_input = $("[name='submitted[civicrm_1_activity_1_cg7_custom_154]']"); /* campaign */
+  var content_input = $("[name='submitted[civicrm_1_activity_1_cg7_custom_156]']"); /* content */
 
   // utm-medium
   if( get_utm_medium != '' && get_utm_medium ){
@@ -47,7 +47,6 @@ jQuery(function($) {
     else if(get_utm_medium == 'social_com') medium_input.val("9");
     else if(get_utm_medium == 'banner') medium_input.val("10");
     else medium_input.val("5"); // por defecto es web
-
   }
   // utm-source
   if( get_utm_source != '' && get_utm_source ){
@@ -58,7 +57,7 @@ jQuery(function($) {
   }
   // utm_campaign
   if( get_utm_campaign != '' && get_utm_campaign ){ // utm_campaign
-    origen_input.val(get_utm_campaign);
+    campaign_input.val(get_utm_campaign);
   }
   // utm-content
   if( get_utm_content != '' && get_utm_content ){
