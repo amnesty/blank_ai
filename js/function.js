@@ -11,10 +11,19 @@ function getUrlVars() {
 
 jQuery(function($) {
 
+  /* Esconder caja del módulo Development Environment */
   if( $(".status").text().includes("development") ){
     $(".status").css("visibility", "hidden");
     $(".status").css("height", "0px");
   }
+
+  /* Si existe campo politica, lo manda al oculto de la actividad */
+  $('.politica_check').click(function(){
+    var acepta_poltica = $("[name='submitted[civicrm_1_activity_1_cg7_custom_162]']"); /* content */
+    console.log(acepta_poltica.val());
+    acepta_poltica.val($(this).val());
+  });
+
 
   /************* Variables UTM  **************/
 
