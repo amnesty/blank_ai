@@ -18,7 +18,7 @@ jQuery(function($) {
   }
 
   /* Si existe campo politica, lo manda al oculto de la actividad */
-  $('.politica_check').change(function(){
+  $('.politica_check').click(function(){
     var acepta_poltica = $("[name='submitted[civicrm_1_activity_1_cg7_custom_162]']");
     var checked = $(this).attr('checked');
     console.log(checked);
