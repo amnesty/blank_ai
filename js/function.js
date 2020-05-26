@@ -18,11 +18,13 @@ jQuery(function($) {
   }
 
   /* Si existe campo politica, lo manda al oculto de la actividad */
-  $('.politica_check').click(function(){
-    var acepta_poltica = $("[name='submitted[civicrm_1_activity_1_cg7_custom_162]']");
-    var checked = $(this).attr('checked');
-    console.log(checked);
-    acepta_poltica.val(checked=='true'?1:0);
+  $('.politica_check:input').click(function(){
+    if( $(this).prop('checked') ) {
+      $("[name='submitted[civicrm_1_activity_1_cg7_custom_162]']").val(1);
+    }
+    else {
+      $("[name='submitted[civicrm_1_activity_1_cg7_custom_162]']").val(0);
+    }
   });
 
 
