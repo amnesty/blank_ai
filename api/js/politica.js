@@ -30,6 +30,9 @@
             } else {
 	      $(".webform-submit").prop("type", "submit");
               $(".politica_check").prop('checked',true);
+              if( $("[name='submitted[civicrm_1_activity_1_cg7_custom_162]']") ){ // si existe campo oculto
+                $("[name='submitted[civicrm_1_activity_1_cg7_custom_162]']").val(1);
+              }
               $('.politica_check').hide();
             }
 
