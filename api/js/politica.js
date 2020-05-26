@@ -21,11 +21,14 @@
           success:  function (response) {
             if ((response.id == null) || (response.no_fundraising == 1))
             {
-	      $(".webform-submit").prop("type", "button");      
+	      $(".webform-submit").prop("type", "button");
               $('.politica_check').prop('checked',false);
               $('.politica_check').show();
-            }else {
-	      $(".webform-submit").prop("type", "submit");	
+              if( $("[name='submitted[civicrm_1_activity_1_cg7_custom_162]']") ){ // si existe campo oculto
+                $("[name='submitted[civicrm_1_activity_1_cg7_custom_162]']").val(0);
+              }
+            } else {
+	      $(".webform-submit").prop("type", "submit");
               $(".politica_check").prop('checked',true);
               $('.politica_check').hide();
             }
