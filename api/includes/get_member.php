@@ -2,6 +2,8 @@
 
 include_once('connect.php');
 include_once('api.php');
+include_once('api_cheetah.php'); // A EXTINGUIR
+
 
 //$member_id = get_member_by_email('nano1985@gmaiewql.com');
 //$member_id = post_member_ai('test-politik-4-@civi.es', 'Fernando', 'Rodríguez', '666666666', 'ES', 'España', 'interesado_a', '0');
