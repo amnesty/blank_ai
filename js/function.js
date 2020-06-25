@@ -60,6 +60,9 @@ jQuery(function($) {
     else if(get_utm_medium == 'banner') medium_input.val("10");
     else medium_input.val("5"); // por defecto es web
   }
+  else {
+    medium_input.val("5");
+  }
   // utm-source
   if( get_utm_source != '' && get_utm_source ){
     source_input.val(get_utm_source);
