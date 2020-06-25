@@ -6,11 +6,11 @@
 
 /******** Llamadas CURL ********/
 
-function ai_curl($url, $token){
+function ai_curl($url){
 
     $curl = curl_init();
 
-    $token = ai_get_token()['token'];
+    $token = ai_get_token();
 
     curl_setopt_array($curl, array(
         CURLOPT_URL => $url,
@@ -34,6 +34,9 @@ function ai_curl($url, $token){
 function ai_curl_post($url, $data){
 
     $curl = curl_init();
+
+    $token = ai_get_token();
+
     curl_setopt_array($curl, array(
         CURLOPT_URL => $url,
         CURLOPT_RETURNTRANSFER => true,
@@ -45,7 +48,31 @@ function ai_curl_post($url, $data){
         CURLOPT_POSTFIELDS => $data,
         CURLOPT_HTTPHEADER => array(
           "content-type: application/json",
-          'Authorization: '.TOKEN.''
+          'Authorization: '.$token.''
+        ),
+    ));
+    $response = curl_exec($curl);
+    $err = curl_error($curl);
+    curl_close($curl);
+
+    return json_decode($response, true);
+}
+
+function ai_curl_post_no_token($url, $data){
+
+    $curl = curl_init();
+
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => $url,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => "",
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => "POST",
+        CURLOPT_POSTFIELDS => $data,
+        CURLOPT_HTTPHEADER => array(
+          "content-type: application/json"
         ),
     ));
     $response = curl_exec($curl);
@@ -58,6 +85,9 @@ function ai_curl_post($url, $data){
 function ai_curl_put($url, $data){
 
     $curl = curl_init();
+
+    $token = ai_get_token();
+
     curl_setopt_array($curl, array(
         CURLOPT_URL => $url,
         CURLOPT_RETURNTRANSFER => true,
@@ -70,7 +100,7 @@ function ai_curl_put($url, $data){
         CURLOPT_HTTPHEADER => array(
           "cache-control: no-cache",
           "content-type: application/json",
-          'Authorization: '.TOKEN.''
+          'Authorization: '.$token.''
         ),
     ));
     $response = curl_exec($curl);
@@ -113,15 +143,15 @@ function do_curl($url, $method, $headers, $postText){
 /**** Get token dinamico ********/
 function ai_get_token(){
 
-    $url = "http://".IP.":".PORT."/api/auth/token/?email=".$email;
+    $url = "http://".IP.":".PORT."/api/auth/token/";
     $data = '{
         "username": "'.USER.'",
         "password": "'.PWD.'"
      }';
-    $res = ai_curl_post($url, $data);
-    return $res;
 
-    return json_decode($response, true);
+    $res = ai_curl_post_no_token($url, $data);
+
+    return $res['token'];
 }
 
 /***** Consultar status segun crm_id *******/
