@@ -1,6 +1,6 @@
 <?php
 
-if (!function_exists("encoremed_bootstrap_menu_tree__primary") {
+if (!function_exists("encoremed_bootstrap_menu_tree__primary")) {
   /** Bootstrap theme wrapper function for the primary menu links. **/
   function encoremed_bootstrap_menu_tree__primary(&$variables) {
       return '<ul class="menu nav navbar-nav navbar-right">' . $variables['tree'] . '</ul>';
