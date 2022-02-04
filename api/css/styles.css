@@ -1,0 +1,10 @@
+.politica_check{
+   display: none;
+}
+
+#ai-accion-firma__masinfo_reminder, #edit-submitted-acepto-la-politica-de-privacidad-1{
+  outline: 3px solid #292;
+  color: #292 !important;
+  float: left;
+  margin-right: .5em;
+}

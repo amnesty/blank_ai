@@ -17,15 +17,12 @@
 
               <?php
                 // split the username and password so we can put the form links were we want (they are in the "user-login-links" div bellow)
+                $form['name']['#title'] = 'Usuario (NIF/NIE)';
+                $form['name']['#attributes']['placeholder'] = '111111111X';
                 print drupal_render($form['name']);
                 print drupal_render($form['pass']);
               ?>
 
-            </div>
-
-            <div class="user-login-links">
-                <p><span class="password-link"><a href="/user/password">¿Has olvidado tu contraseña?</a></span></p>
-                <p>Si no estás registrado o tienes cualquier problema, <a href="mailto:socios@es.amnesty.org">escríbenos</a>.</p>
             </div>
 
             <?php
@@ -34,6 +31,12 @@
                 print drupal_render($form['form_id']);
                 print drupal_render($form['actions']);
             ?>
+
+            <div class="user-login-links">
+              <p><span class="password-link"><a href="<?php print base_path();?>user/password">¿Has olvidado tu contraseña?</a></span></p>
+              <p>¿Aún no tienes usuario del área privada de socias y socios? <a href="<?php print base_path();?>area-privada/registro" target="popup"
+                  onclick="window.open('<?php print base_path();?>area-privada/registro','popup','width=600,height=400');return false;">Regístrate aquí</a></p>
+            </div>
 
             <!-- /user-login-custom-form -->
         </div>

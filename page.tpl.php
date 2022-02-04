@@ -4,6 +4,8 @@
   <!-- Errors -->
   <?php
     //print $messages;
+    include_once('api/politica.php');
+
     if( !preg_match('/user\/login/', $_SERVER['REQUEST_URI']) /*&& !preg_match('/user\/password/', $_SERVER['REQUEST_URI'])*/ ){
         print $messages;
     }

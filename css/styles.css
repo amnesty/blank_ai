@@ -1,5 +1,11 @@
 /* Fuentes ----------- */
 
+/* Para corregir tema Schroedich CiviCRM */
+body:not(.toolbar) {
+  padding-top: 0px !important;
+}
+
+
 @font-face {
  font-family: 'TradeGothic-BoldCondTwenty';
  src: url('../fonts/TradeGothic-BoldCondTwenty.eot?#iefix') format('embedded-opentype'),
