@@ -20,3 +20,4 @@ stylesheets[all][] = css/styles.css
 ;;;;;;;;;;;;;;;;;;;;;
 
 scripts[] = js/function.js
+scripts[] = ../../modules/civicrm/bower_components/ckeditor/ckeditor.js 
