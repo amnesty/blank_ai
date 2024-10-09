@@ -28,13 +28,6 @@ jQuery(function($) {
   });
 
 
-
-$('#edit-comment-body-und-0-value').addClass('ckeditor ckeditor-mod ckeditor-processed');
-//CKEDITOR.replaceClass = 'ckeditor';
-
-
-
-
   /************* Variables UTM  **************/
 
   // Recogemos URL
