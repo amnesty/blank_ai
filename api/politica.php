@@ -1,8 +1,8 @@
 <?php
 
 //if (getComponentPolitica($page['content'][system_main][nodes][$node->nid][webform]['#node']->webform[components], 'politica_check')){
-if (isset($page['content'][system_main][nodes][$node->nid][webform]['#node']->webform[components]) &&
-	getComponentPolitica($page['content'][system_main][nodes][$node->nid][webform]['#node']->webform[components], 'politica_check')){
+if (isset($page['content']['system_main']['nodes'][$node->nid]['webform']['#node']->webform['components']) &&
+	getComponentPolitica($page['content']['system_main']['nodes'][$node->nid]['webform']['#node']->webform['components'], 'politica_check')){
 
 	global $base_url;
 	$theme_path = $base_url . "/sites/all/themes/blank_ai/api/";
@@ -38,7 +38,7 @@ function getComponentPolitica($arrayComponentes, $TipoComponente)
 {
 	foreach ($arrayComponentes as $aComponents)
 	{
-		if (isset($aComponents[extra][css_classes]) && $aComponents[extra][css_classes] == $TipoComponente){
+		if (isset($aComponents['extra']['css_classes']) && $aComponents['extra']['css_classes'] == $TipoComponente){
 			return true;
 		}
 	}

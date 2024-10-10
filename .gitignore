@@ -1,2 +1,4 @@
 api/includes/connect.php
 api/includes/config.php
+ganalytics.php
+piwik.php
